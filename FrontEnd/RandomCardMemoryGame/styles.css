@@ -1,3 +1,8 @@
+:root {
+    --card-width: calc(1000/6 * 1px);
+    --card-height: calc(var(--card-width) * 1.5);
+}
+
 body {
     text-align: center;
     background-color: #f0f0f0;
@@ -18,6 +23,7 @@ p {
     justify-content: center;
 
     display: grid;
-    grid-template-columns: repeat(6, 120px);
-    grid-template-rows: repeat(2, 200px);
+    grid-template-columns: repeat(6, var(--card-width));
+    grid-template-rows: repeat(2, var(--card-height));
+    grid-gap: 1rem;
 }
