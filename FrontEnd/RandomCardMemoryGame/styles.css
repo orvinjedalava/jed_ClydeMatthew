@@ -13,3 +13,11 @@ p {
     font-size: 2rem;
     font-weight: bold;
 }
+
+.card-table {
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: repeat(6, 120px);
+    grid-template-rows: repeat(2, 200px);
+}
