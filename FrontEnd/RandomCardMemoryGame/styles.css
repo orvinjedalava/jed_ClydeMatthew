@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    background-color: #f0f0f0;
+    color: rgb(17,17,17);
+}
+
+/* rem is root EM, size is relative to <html> , and not to immediate parent EM */
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 2rem;
+    font-weight: bold;
+}
