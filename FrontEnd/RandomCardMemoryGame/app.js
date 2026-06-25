@@ -27,11 +27,17 @@ fetch("./data/card_info.json")
         console.log(cardsWithMap);
         */
 
+        /*
         // OPTION 2 using flatmap()
         const cardsWithFlatMap = data.flatMap(card => {
             return [card, card];
         })
         console.log(cardsWithFlatMap);
+        */
+
+        // OPTION 3 ( easiest )
+        cards = [...data, ...data];
+        // console.log(cards);
     })
     .catch((error) => {
         console.log("Error fetching card data: ", error);
