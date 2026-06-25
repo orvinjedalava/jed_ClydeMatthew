@@ -21,9 +21,17 @@ async function loadCards() {
 fetch("./data/card_info.json")
     .then(response => response.json())
     .then((data) => {
+        /*
         // OPTION 1 using MAP
         const cardsWithMap = data.map(card => [card, card]).flat();
         console.log(cardsWithMap);
+        */
+
+        // OPTION 2 using flatmap()
+        const cardsWithFlatMap = data.flatMap(card => {
+            return [card, card];
+        })
+        console.log(cardsWithFlatMap);
     })
     .catch((error) => {
         console.log("Error fetching card data: ", error);
