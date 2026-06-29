@@ -37,8 +37,14 @@ fetch("./data/card_info.json")
 
         // OPTION 3 ( easiest )
         cards = [...data, ...data];
-        // console.log(cards);
+        
+        // deal our cards
+        dealCards();
     })
     .catch((error) => {
         console.log("Error fetching card data: ", error);
-    }); 
+    });
+    
+function dealCards(cards) {
+    
+}
