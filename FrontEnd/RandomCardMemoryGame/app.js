@@ -46,5 +46,22 @@ fetch("./data/card_info.json")
     });
     
 function dealCards(cards) {
-    
+    console.log('welcome to the random card game');
+
+    for (const card of cards) {
+        // OPTION 1: Directly adding created elements to the DOM
+        // #1. create the card wrapper
+        let cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.setAttribute("data-name", card.name);
+        // #2 add the front and back of the card
+        cardElement.innerHTML = `
+            <div class="back">
+                <img class="back-image" src="${card.image}">
+            </div>
+            <div class="front">
+            </div>
+        `;
+    }
+
 }
