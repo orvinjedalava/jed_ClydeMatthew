@@ -52,18 +52,23 @@ function dealCards(cards) {
     for (const card of cards) {
         // OPTION 1: Directly adding created elements to the DOM
         // #1. create the card wrapper
-        let cardElement = document.createElement("div");
-        cardElement.classList.add("card");
-        cardElement.setAttribute("data-name", card.name);
-        // #2 add the front and back of the card
-        cardElement.innerHTML = `
-            <div class="back">
-                <img class="back-image" src="${card.image}">
-            </div>
-            <div class="front">
-            </div>
-        `;
-        cardTable.appendChild(cardElement);
+        // let cardElement = document.createElement("div");
+        // cardElement.classList.add("card");
+        // cardElement.setAttribute("data-name", card.name);
+        // // #2 add the front and back of the card
+        // cardElement.innerHTML = `
+        //     <div class="back">
+        //         <img class="back-image" src="${card.image}">
+        //     </div>
+        //     <div class="front">
+        //     </div>
+        // `;
+        // cardTable.appendChild(cardElement);
+
+        // OPTION 2: using fragments
+        // create a document fragment to minimize reflows ( if you append each card 1 by 1), 
+        // this can be innefficient because each appendChild operation may trigger reflows and repaint the browser.
+        let fragment = document.createDocumentFragment();
     }
 
 }
