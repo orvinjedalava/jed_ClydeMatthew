@@ -1,5 +1,6 @@
 // initialize card variables
 let cards = [];
+let cardTable = document.querySelector(".card-table");
 
 /* using Fetch API async/await
 loadCards();
@@ -39,7 +40,7 @@ fetch("./data/card_info.json")
         cards = [...data, ...data];
         
         // deal our cards
-        dealCards();
+        dealCards(cards);
     })
     .catch((error) => {
         console.log("Error fetching card data: ", error);
@@ -47,7 +48,7 @@ fetch("./data/card_info.json")
     
 function dealCards(cards) {
     console.log('welcome to the random card game');
-
+    
     for (const card of cards) {
         // OPTION 1: Directly adding created elements to the DOM
         // #1. create the card wrapper
@@ -62,6 +63,7 @@ function dealCards(cards) {
             <div class="front">
             </div>
         `;
+        cardTable.appendChild(cardElement);
     }
 
 }
