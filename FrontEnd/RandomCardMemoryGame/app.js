@@ -91,7 +91,7 @@ function dealCards(cards) {
         backCardDiv.appendChild(img);
 
         // append our front and back of the card, to the card itself
-        cardElement.append(rontCardDiv, backCardDiv);
+        cardElement.append(frontCardDiv, backCardDiv);
         // attach our card to the fragment
         fragment.appendChild(cardElement);
     } // end of for loop
