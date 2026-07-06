@@ -48,6 +48,11 @@ fetch("./data/card_info.json")
     
 function dealCards(cards) {
     console.log('welcome to the random card game');
+
+    // OPTION 2: using fragments
+    // create a document fragment to minimize reflows ( if you append each card 1 by 1), 
+    // this can be innefficient because each appendChild operation may trigger reflows and repaint the browser.
+    let fragment = document.createDocumentFragment();
     
     for (const card of cards) {
         // OPTION 1: Directly adding created elements to the DOM
@@ -65,10 +70,33 @@ function dealCards(cards) {
         // `;
         // cardTable.appendChild(cardElement);
 
-        // OPTION 2: using fragments
-        // create a document fragment to minimize reflows ( if you append each card 1 by 1), 
-        // this can be innefficient because each appendChild operation may trigger reflows and repaint the browser.
-        let fragment = document.createDocumentFragment();
-    }
+        // OPTION 2: Use fragments
+        // create our entre card
+        let cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.setAttribute("data-name", card.name);
+
+        // create both the front and back of the cards, separately.
+        // FRONT of card
+        let frontCardDiv = document.createElement("div");
+        frontCardDiv.classList.add("front");
+
+        // BACK of card
+        let backCardDiv = document.createElement("div");
+        backCardDiv.classList.add("back");
+        // add image to the back of the card.
+        let img = document.createElement("img");
+        img.classList.add("back-image");
+        img.src = `${card.image}`;
+        backCardDiv.appendChild(img);
+
+        // append our front and back of the card, to the card itself
+        cardElement.append(rontCardDiv, backCardDiv);
+        // attach our card to the fragment
+        fragment.appendChild(cardElement);
+    } // end of for loop
+
+    // append the entire fragment to the live DOM
+    cardTable.appendChild(fragment);
 
 }
