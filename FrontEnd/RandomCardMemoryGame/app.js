@@ -74,6 +74,8 @@ function shuffle() {
 
     // OPTION 2
     // Swap elements using destructuring assignment in Javascript.
+
+    return shuffledCardsArray;
 }
     
 function dealCards(cards) {
