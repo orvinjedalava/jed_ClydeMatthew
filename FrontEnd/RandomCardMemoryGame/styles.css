@@ -52,3 +52,11 @@ img.back-image {
     justify-content: center;
     align-items: center;
 }
+
+.card .front {
+    position: absolute;
+    background-image: url("./images/cover.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
