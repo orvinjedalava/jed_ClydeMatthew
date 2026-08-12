@@ -99,4 +99,17 @@ function dealCards(cards) {
     // append the entire fragment to the live DOM
     cardTable.appendChild(fragment);
 
+    // Attach click event listeners after all cards are added.
+    let dealthCards = document.querySelectorAll('.card');
+    dealthCards.forEach(card => {
+        card.addEventListener("click", flipCard);
+    })
+
+}
+
+function flipCard() {
+    // this - represents the HTML Element that triggers the event
+    // console.log(this);
+    // add a css class to activate the flip effect
+    this.classList.add("flipped");
 }
