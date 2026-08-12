@@ -54,6 +54,15 @@ function shuffle() {
     let shuffledCardsArray = [...cards];
     let totalCards = shuffledCardsArray.length;
     let currentIndex = totalCards - 1;
+
+    // use Fisher-Yates ( or Knuth ) shuffle algorithm. This method is efficient and ensures that
+    // each possible permutation of the array has an equal probability of occurring.
+
+    // OPTION 1
+    // Loop through the array from the last element to the first
+
+    // OPTION 2
+    // Swap elements using destructuring assignment in Javascript.
 }
     
 function dealCards(cards) {
