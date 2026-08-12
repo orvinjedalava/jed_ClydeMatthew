@@ -38,13 +38,23 @@ fetch("./data/card_info.json")
 
         // OPTION 3 ( easiest )
         cards = [...data, ...data];
+
+        // shuffle our cards
+        let shuffledCards = shuffle();
         
         // deal our cards
-        dealCards(cards);
+        dealCards(shuffledCards);
     })
     .catch((error) => {
         console.log("Error fetching card data: ", error);
     });
+
+function shuffle() {
+    // Create a copy of the cards array to avoid mutating the original array.
+    let shuffledCardsArray = [...cards];
+    let totalCards = shuffledCardsArray.length;
+    let currentIndex = totalCards - 1;
+}
     
 function dealCards(cards) {
     console.log('welcome to the random card game');
