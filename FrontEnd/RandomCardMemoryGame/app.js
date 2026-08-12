@@ -60,6 +60,17 @@ function shuffle() {
 
     // OPTION 1
     // Loop through the array from the last element to the first
+    for(currentIndex; currentIndex > 0; currentIndex--) {
+        // Generate a random index between 0 and currentIndex (inclusive)
+        let randomCardIndex = Math.floor(Math.random() * (current  + 1));
+
+        // Swap the elements at currentIndex and randomIndex using a temporary variable.
+        let randomCard = shuffledCardsArray[randomCardIndex];
+        // replace the randomCard with the card at the currentIndex
+        shuffledCardsArray[randomCardIndex] = shuffledCardsArray[currentIndex];
+        // replace the card at currentIndex with the randomCard.
+        shuffledCardsArray[currentIndex] = randomCard;
+    }
 
     // OPTION 2
     // Swap elements using destructuring assignment in Javascript.
