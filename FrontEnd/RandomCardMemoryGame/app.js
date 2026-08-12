@@ -1,6 +1,8 @@
 // initialize card variables
 let cards = [];
 let cardTable = document.querySelector(".card-table");
+let firstCard = null;
+let secondCard = null;
 
 /* using Fetch API async/await
 loadCards();
@@ -150,4 +152,12 @@ function flipCard() {
     // console.log(this);
     // add a css class to activate the flip effect
     this.classList.add("flipped");
+    // grab first card flipped over ( clicked )
+    if (!firstCard) {
+      firstCard = this;
+      return;
+    }
+
+    secondCard = this;
+
 }
