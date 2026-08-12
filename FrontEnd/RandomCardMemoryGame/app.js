@@ -3,6 +3,7 @@ let cards = [];
 let cardTable = document.querySelector(".card-table");
 let firstCard = null;
 let secondCard = null;
+let noFlipping = false;
 
 /* using Fetch API async/await
 loadCards();
@@ -148,6 +149,8 @@ function dealCards(cards) {
 }
 
 function flipCard() {
+    
+    if (noFlipping) { return; }
     // this - represents the HTML Element that triggers the event
     // console.log(this);
     // add a css class to activate the flip effect
@@ -159,5 +162,5 @@ function flipCard() {
     }
 
     secondCard = this;
-
+    noFlipping = true;
 }
