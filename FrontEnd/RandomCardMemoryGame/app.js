@@ -163,4 +163,29 @@ function flipCard() {
 
     secondCard = this;
     noFlipping = true;
+    checkForMatch();
+}
+
+function checkForMatch() {
+    // dataset propert returns all the key attributes we've attached to that DOM ( e.g. cardElement.setAttribute("data-name", card.name) )
+    // let firstName = firstCard.dataset.name;
+    // let secondCardName = secondCard.dataset.name;
+    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+
+    isMatch ? matchCards() : unflipCards();
+}
+
+function unflipCards() {
+    setTimeout(() => {
+        firstCard.classList.remove("flipped");
+        secondCard.classList.remove("flipped");
+        resetFlags();
+    }, 1000);
+    
+}
+
+function resetFlags() {
+    firstCard = null;
+    secondCard = null;
+    noFlipping = false;
 }
