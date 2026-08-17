@@ -155,6 +155,9 @@ function flipCard() {
     // console.log(this);
     // add a css class to activate the flip effect
     this.classList.add("flipped");
+    // prohibit user from clicking on the same card twice
+    if(this === firstCard ) { return; }
+
     // grab first card flipped over ( clicked )
     if (!firstCard) {
       firstCard = this;
@@ -182,6 +185,18 @@ function unflipCards() {
         resetFlags();
     }, 1000);
     
+}
+
+function matchCards() {
+    // remove the click event listener from our matched cards.
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
+
+    // add a green color to matched cards.
+    firstCard.children[0].style.background = 'greenyellow';
+    secondCard.children[0].style.background = 'greenyellow';
+
+    resetFlags();
 }
 
 function resetFlags() {
